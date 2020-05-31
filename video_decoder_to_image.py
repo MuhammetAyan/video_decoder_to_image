@@ -42,14 +42,9 @@ while cap.isOpened():
         break
     printProgressBar(i, length - 1, prefix='Progress:', suffix='Complete', length=50)
     if i % floor(FPS) == 0:
-        # print("old", oldframe.shape)
-        # print("new", frame.shape)
-        # print(frame)
         compare = frame == oldframe
-        # print(compare.all())
-        # print(f"{i}/{length}")
         if not compare.all():
-            cv2.imwrite('data\\kang'+str(i)+'.jpg', frame)
+            cv2.imwrite('data\\frame'+str(i)+'.jpg', frame)
             oldframe = frame
     i += 1
  
